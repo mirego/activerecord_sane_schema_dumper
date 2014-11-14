@@ -16,7 +16,9 @@ gem 'activerecord_sane_schema_dumper'
 
 ## Usage
 
-The gem modifies the behavior of Rails’ `rake db:schema:dump` task.
+The gem modifies the behavior of Rails’ `rake db:schema:dump` task. This task
+is part of Rails migrations process to ensure that `db/schema.rb` stays in-sync
+with your local database.
 
 It removes all useless whitespace that Rails adds so adding/modifying/removing
 columns from your tables only touches relevant lines (because other table lines
