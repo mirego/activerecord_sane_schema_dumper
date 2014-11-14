@@ -78,7 +78,7 @@ If I remove the `data` column and regenerate the `db/schema.rb` file, only the r
 
 ## License
 
-`ActiveRecord::SaneSchemaDumper` is © 2014 [Mirego](http://www.mirego.com) and may be freely distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).  See the [`LICENSE.md`](https://github.com/mirego/activerecord_json_validator/blob/master/LICENSE.md) file.
+`ActiveRecord::SaneSchemaDumper` is © 2014 [Mirego](http://www.mirego.com) and may be freely distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).  See the [`LICENSE.md`](https://github.com/mirego/activerecord_sane_schema_dumper/blob/master/LICENSE.md) file.
 
 ## About Mirego
 
