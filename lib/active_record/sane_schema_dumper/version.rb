@@ -1,6 +1,5 @@
 module ActiveRecord
-end
-
-module ActiveRecord::SaneSchemaDumper
-  VERSION = '0.0.1'
+  module SaneSchemaDumper
+    VERSION = '0.1'.freeze
+  end
 end
