@@ -18,6 +18,32 @@ gem 'activerecord_sane_schema_dumper'
 
 The gem modifies the behavior of Rails’ `rake db:schema:dump` task.
 
+It removes all useless whitespace that Rails adds so adding/modifying/removing
+columns from your tables only touches relevant lines (because other table lines
+do not try to stay aligned).
+
+### Before
+
+```ruby
+create_table "event_data", force: true do |t|
+  t.string   "event_external_id"
+  t.json     "data",              default: {}
+  t.datetime "created_at",                     null: false
+  t.datetime "updated_at",                     null: false
+end
+```
+
+### After
+
+```ruby
+create_table "event_data", force: true do |t|
+  t.string "event_external_id"
+  t.json "data", default: {}
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+end
+```
+
 ## License
 
 `ActiveRecord::SaneSchemaDumper` is © 2014 [Mirego](http://www.mirego.com) and may be freely distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).  See the [`LICENSE.md`](https://github.com/mirego/activerecord_json_validator/blob/master/LICENSE.md) file.
