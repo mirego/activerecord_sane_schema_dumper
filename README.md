@@ -8,10 +8,12 @@ contain any useless/harmful whitespace column alignment.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application’s Gemfile in your `development` group:
 
 ```ruby
-gem 'activerecord_sane_schema_dumper'
+group :development do
+  gem 'activerecord_sane_schema_dumper'
+end
 ```
 
 ## Usage
