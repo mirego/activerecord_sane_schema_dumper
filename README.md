@@ -27,6 +27,8 @@ do not try to stay aligned).
 ### Before
 
 ```ruby
+# db/schema.rb
+
 create_table "event_data", force: true do |t|
   t.string   "event_external_id"
   t.json     "data",              default: {}
@@ -35,15 +37,41 @@ create_table "event_data", force: true do |t|
 end
 ```
 
+But what happens if I remove the `data` column and regenerate `db/schema.rb`? Here’s the resulting diff:
+
+```ruby
+   create_table "event_data", force: true do |t|
+     t.string   "event_external_id"
+-    t.datetime "created_at",                     null: false
+-    t.datetime "updated_at",                     null: false
+-    t.json     "data",              default: {}
++    t.datetime "created_at",        null: false
++    t.datetime "updated_at",        null: false
+   end
+```
+
 ### After
 
 ```ruby
+# db/schema.rb
+
 create_table "event_data", force: true do |t|
   t.string "event_external_id"
   t.json "data", default: {}
   t.datetime "created_at", null: false
   t.datetime "updated_at", null: false
 end
+```
+
+If I remove the `data` column and regenerate the `db/schema.rb` file, only the relevant line will be touched:
+
+```ruby
+   create_table "event_data", force: true do |t|
+     t.string "event_external_id"
+-    t.json "data", default: {}
+     t.datetime "created_at", null: false
+     t.datetime "updated_at", null: false
+   end
 ```
 
 ## License
