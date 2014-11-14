@@ -7,4 +7,4 @@ require 'active_support'
 
 # Modules
 require 'active_record/sane_schema_dumper/extension'
-require 'active_record/sane_schema_dumper/railtie' if defined?(Rails) && Rails::VERSION::MAJOR >= 3
+require 'active_record/sane_schema_dumper/railtie'
