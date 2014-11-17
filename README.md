@@ -52,6 +52,8 @@ But what happens if I remove the `data` column and regenerate `db/schema.rb`? He
    end
 ```
 
+We’ve removed the `data` column but `created_at` and `updated_at` lines are affected too. This is not good.
+
 ### After
 
 ```ruby
@@ -75,6 +77,8 @@ If I remove the `data` column and regenerate the `db/schema.rb` file, only the r
      t.datetime "updated_at", null: false
    end
 ```
+
+One removed column, one affected line in the table definition. Much better.
 
 ## License
 
