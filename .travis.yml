@@ -1,0 +1,9 @@
+language: ruby
+
+rvm:
+  - 2.1.5
+
+script: "echo 'DO IT' && bundle exec rake spec"
+
+before_script:
+  - psql -c 'create database activerecord_sane_schema_dumper_test;' -U postgres
