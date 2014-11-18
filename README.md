@@ -5,6 +5,7 @@
 contain any useless/harmful whitespace column alignment.
 
 [![Gem Version](http://img.shields.io/gem/v/activerecord_sane_schema_dumper.svg)](https://rubygems.org/gems/activerecord_sane_schema_dumper)
+[![Build Status](http://img.shields.io/travis/mirego/activerecord_sane_schema_dumper.svg)](https://travis-ci.org/mirego/activerecord_sane_schema_dumper)
 
 ## Installation
 
