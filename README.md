@@ -31,7 +31,6 @@ do not try to stay aligned).
 
 ```ruby
 # db/schema.rb
-
 create_table "event_data", force: true do |t|
   t.string   "event_external_id"
   t.json     "data",              default: {}
@@ -59,7 +58,6 @@ We’ve removed the `data` column but `created_at` and `updated_at` lines are af
 
 ```ruby
 # db/schema.rb
-
 create_table "event_data", force: true do |t|
   t.string "event_external_id"
   t.json "data", default: {}
