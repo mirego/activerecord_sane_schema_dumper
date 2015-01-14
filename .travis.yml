@@ -1,7 +1,9 @@
 language: ruby
 
 rvm:
-  - 2.1.5
+  - 2.1
+
+sudo: false
 
 script: "echo 'DO IT' && bundle exec rake spec"
 
