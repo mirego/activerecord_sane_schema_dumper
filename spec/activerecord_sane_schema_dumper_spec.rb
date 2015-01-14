@@ -26,7 +26,7 @@ describe ActiveRecord::SaneSchemaDumper do
 
     let(:expected_table) do
       <<EOF
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name", limit: 100
     t.text "profile"
     t.datetime "created_at", null: false
@@ -47,7 +47,7 @@ EOF
 
     let(:expected_table) do
       <<EOF
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name",       limit: 100
     t.text     "profile"
     t.datetime "created_at",             null: false
