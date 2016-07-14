@@ -6,7 +6,7 @@ module ActiveRecord
     class Railtie < Rails::Railtie
       initializer 'activerecord_sane_schema_dumper.active_record' do
         ActiveSupport.on_load :active_record do
-          ActiveRecord::SchemaDumper.send(:include, ActiveRecord::SaneSchemaDumper::Extension)
+          ActiveRecord::SchemaDumper.prepend(ActiveRecord::SaneSchemaDumper::Extension)
         end
       end
     end
