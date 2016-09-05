@@ -1,4 +1,4 @@
-Copyright (c) 2014-2015, Mirego
+Copyright (c) 2014-2016, Mirego
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
