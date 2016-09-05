@@ -1,10 +1,16 @@
 module ActiveRecord
   module SaneSchemaDumper
     module Extension
-      def table(table, main_stream)
+      extend ActiveSupport::Concern
+
+      included do
+        alias_method_chain :table, :sane_alignment
+      end
+
+      def table_with_sane_alignment(table, main_stream)
         # Call the original method to populate our custom stream
         stream = StringIO.new
-        super(table, stream)
+        table_without_sane_alignment(table, stream)
 
         # Rewind the stream and remove useless whitespace
         content = stream.tap(&:rewind).read.gsub(/(?<!^)(?<!\s)[ ]{2,}/, ' ')
