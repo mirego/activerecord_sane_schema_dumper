@@ -21,7 +21,7 @@ describe ActiveRecord::SaneSchemaDumper do
 
   context 'with SaneSchemaDumper behavior' do
     before do
-      ActiveRecord::SchemaDumper.send(:include, ActiveRecord::SaneSchemaDumper::Extension)
+      ActiveRecord::SchemaDumper.prepend(ActiveRecord::SaneSchemaDumper::Extension)
     end
 
     let(:expected_table) do
@@ -40,9 +40,7 @@ EOF
 
   context 'without SaneSchemaDumper behavior' do
     before do
-      allow_any_instance_of(ActiveRecord::SchemaDumper).to receive(:table) do |instance, *args|
-        instance.send :table_without_sane_alignment, *args
-      end
+      ActiveRecord::SaneSchemaDumper::Extension.send(:remove_method, :table)
     end
 
     let(:expected_table) do
