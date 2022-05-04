@@ -7,6 +7,10 @@ contain any useless/harmful whitespace column alignment.
 [![Gem Version](http://img.shields.io/gem/v/activerecord_sane_schema_dumper.svg)](https://rubygems.org/gems/activerecord_sane_schema_dumper)
 [![Build Status](http://img.shields.io/travis/mirego/activerecord_sane_schema_dumper.svg)](https://travis-ci.org/mirego/activerecord_sane_schema_dumper)
 
+## ⚠️ WARNING · OBSOLETE ⚠️
+
+This gem is no longer required since Rails 6 ([reference commit](https://github.com/rails/rails/commit/df84e9867219e9311aef6f4efd5dd9ec675bee5c)). Rails no longer adds superfulous whitespace when dumping the schema 🙌.
+
 ## Installation
 
 Add this line to your application’s Gemfile in your `development` group:
